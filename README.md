@@ -1,22 +1,36 @@
 # Biblioteca Web
 
 ## Tecnologías
-Backend: Python (Flask)
-Frontend: HTML, CSS, Javascript
-Base de datos: PostgreSQL
-Contenedores: Docker
 
-## Instrucciones
+- **Backend:** Python (Flask)
+- **Frontend:** HTML, CSS, JavaScript
+- **Base de datos:** PostgreSQL
+- **Contenedores:** Docker
 
-### Base de datos
+---
+
+##  Instrucciones
+
+###  Base de datos
+
+```bash
 docker compose up -d
+```
 
-### Backend
+---
+
+###  Backend
+
+```bash
 cd backend
 python -m venv venv
-venv\Scripts\activate
+source venv/bin/activate   # En Linux
 pip install flask psycopg2
 python app.py
+```
 
-### Frontend
-Abrir buscar.html en el navegador
+---
+
+###  Frontend
+
+Abrir `buscar.html` en el navegador.
