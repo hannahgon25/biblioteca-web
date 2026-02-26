@@ -1,7 +1,7 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import psycopg2
 
-app = Flask(__name__)
+app = Flask(__name__)   
 
 conn = psycopg2.connect(
     host="localhost",
@@ -9,6 +9,10 @@ conn = psycopg2.connect(
     user="admin",
     password="admin"
 )
+
+@app.route("/")
+def vista_buscar():
+    return render_template("buscar.html")
 
 @app.route('/libros', methods=['GET'])
 def obtener_libros():
@@ -28,4 +32,4 @@ def buscar_por_autor():
     return jsonify(resultados)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
